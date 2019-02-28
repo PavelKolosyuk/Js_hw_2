@@ -26,16 +26,16 @@ let total = 0;
 do {
   userInput = prompt('Enter numbers. Press Cancel if you finish');
   console.log(userInput);
-    numbers.push(Number(userInput));
     if(userInput === null){
-      numbers.pop();
-    }
-    else if (isNaN(Number(userInput)) == true || userInput == ""){
+      break;
+    } else if (isNaN(Number(userInput)) == true || userInput == ""){
       alert('Please enter a number');
-      numbers.pop();
+    } else {
+      numbers.push(Number(userInput));
     }
   }
-while(userInput !== null);
+while(true);
+
 console.log(numbers);
   
   if(numbers.length !== 0){
