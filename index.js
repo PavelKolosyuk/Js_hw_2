@@ -30,7 +30,7 @@ do {
     if(userInput === null){
       numbers.pop();
     }
-    else if (isNaN(Number(userInput)) == true){
+    else if (isNaN(Number(userInput)) == true || userInput == ""){
       alert('Please enter a number');
       numbers.pop();
     }
