@@ -24,27 +24,26 @@ const numbers = [];
 let total = 0;
 
 do {
-  userInput = Number(prompt('Enter numbers. Press Cancel if you finish'));
+  userInput = prompt('Enter numbers. Press Cancel if you finish');
   console.log(userInput);
-    numbers.push(userInput);
-    if(userInput == 0){
+    numbers.push(Number(userInput));
+    if(userInput === null){
       numbers.pop();
     }
-    else if (isNaN(userInput) == true){
+    else if (isNaN(Number(userInput)) == true){
       alert('Please enter a number');
       numbers.pop();
     }
   }
-while(userInput !== 0);
+while(userInput !== null);
 console.log(numbers);
   
   if(numbers.length !== 0){
-    let count = 0;
     for(i = 0; i < numbers.length; i++){
-    count += numbers[i];
+    total += numbers[i];
     }    
-    alert (`Общая сумма чисел равна ${count}`)
-    console.log(count);
+    alert (`Общая сумма чисел равна ${total}`)
+    console.log(total);
   } 
   else {
     alert ('Array is empty')
